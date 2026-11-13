@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0c0f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Power Gym" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="icon-192.png" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self' data:; manifest-src 'self'; worker-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'self' about:"
+    />
+    <title>Power Gym</title>
+    <link rel="stylesheet" href="app.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div id="boot" class="boot">
+      <svg width="72" height="72" viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="17" fill="#c6f432" />
+        <path d="M35.5 9 17 35.5h13.2L27.5 55 47 27.8H33.6L35.5 9z" fill="#10140a" />
+      </svg>
+      <div class="boot-name">POWER GYM</div>
+      <div class="boot-bar"><span></span></div>
+    </div>
+    <div id="app"></div>
+  </body>
+</html>
