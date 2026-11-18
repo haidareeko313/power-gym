@@ -5071,3 +5071,11 @@ button, a, .chip, .seg-btn { touch-action: manipulation; }
   .scan-stage, .scan-drop { height: min(56vh, 460px); }
 }
 @media (prefers-reduced-motion: reduce) { .scan-laser, .pass-preview img { animation: none; } }
+.scan-err { gap: 8px; }
+.scan-err b { color: #fff; font-size: 15px; }
+.scan-err .small { max-width: 380px; line-height: 1.5; }
+.scan-err-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 6px; }
+.scan-err .tiny { font-size: 11px; opacity: .6; }
+.scan-photo-opts { display: flex; flex-direction: column; gap: 10px; }
+.scan-photo-opts .scan-drop { height: min(38vh, 320px); }
+.scan-photo-opts label.btn { cursor: pointer; }
