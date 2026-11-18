@@ -5033,3 +5033,41 @@ button, a, .chip, .seg-btn { touch-action: manipulation; }
   .period-custom .field { width: 100%; }
   .qr-big img { width: 78vw; }
 }
+
+/* ---------- v1.2 member QR pass + scanner ---------- */
+.tb-scan { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; margin-inline-end: 6px; border-radius: 999px; border: 1px solid transparent; background: var(--accent); color: var(--accent-ink); font: 700 12.5px var(--font); cursor: pointer; transition: transform .12s, filter .15s; }
+.tb-scan:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.pass-preview { display: grid; place-items: center; padding: 6px; }
+.pass-preview img { width: min(360px, 100%); aspect-ratio: 1080 / 1350; border-radius: 22px; box-shadow: 0 24px 60px -24px rgba(0,0,0,.6), 0 0 0 1px var(--border); animation: pass-in .45s cubic-bezier(.2,.9,.3,1.2); }
+.pass-loading { width: min(360px, 100%); aspect-ratio: 1080 / 1350; display: grid; place-items: center; border-radius: 22px; background: var(--panel-2, var(--panel)); }
+@keyframes pass-in { from { opacity: 0; transform: translateY(10px) scale(.97); } to { opacity: 1; transform: none; } }
+.pass-body { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
+.pass-side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.pass-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.pass-preview img, .pass-loading { width: auto !important; height: min(62vh, 520px); }
+
+.scan-stage { position: relative; height: min(48vh, 400px); border-radius: 20px; overflow: hidden; background: #07080a; }
+.scan-stage video { width: 100%; height: 100%; object-fit: cover; }
+.scan-stage video.is-hidden { visibility: hidden; }
+.scan-frame { position: absolute; inset: 50% auto auto 50%; width: min(62%, 260px); aspect-ratio: 1; transform: translate(-50%, -50%); pointer-events: none; box-shadow: 0 0 0 999px rgba(0,0,0,.38); border-radius: 22px; }
+.scan-frame i { position: absolute; width: 34px; height: 34px; border: 4px solid var(--accent); }
+.scan-frame i:nth-child(1) { top: 0; left: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 22px; }
+.scan-frame i:nth-child(2) { top: 0; right: 0; border-left: 0; border-bottom: 0; border-top-right-radius: 22px; }
+.scan-frame i:nth-child(3) { bottom: 0; left: 0; border-right: 0; border-top: 0; border-bottom-left-radius: 22px; }
+.scan-frame i:nth-child(4) { bottom: 0; right: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 22px; }
+.scan-laser { position: absolute; left: 8%; right: 8%; height: 2px; top: 10%; background: var(--accent); box-shadow: 0 0 14px 2px var(--accent); border-radius: 2px; animation: scan-laser 2.2s ease-in-out infinite alternate; }
+@keyframes scan-laser { to { top: 90%; } }
+.scan-drop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; height: min(48vh, 400px); padding: 20px; border-radius: 20px; border: 2px dashed var(--border-2); background: var(--panel); text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+.scan-drop:hover { border-color: var(--accent); }
+.scan-drop > .icon { color: var(--accent-text); }
+.scan-manual { display: flex; align-items: center; gap: 10px; color: var(--text-3); }
+.scan-manual .input { flex: 1; }
+@media (max-width: 760px) {
+  .tb-scan { height: 34px; padding: 0 14px; font-size: 14px; }
+  .pass-body { grid-template-columns: 1fr; gap: 16px; }
+  .pass-preview img, .pass-loading { width: min(300px, 72vw) !important; height: auto; }
+  .pass-actions { grid-template-columns: 1fr 1fr; }
+  .pass-actions .btn-primary:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+  .scan-stage, .scan-drop { height: min(56vh, 460px); }
+}
+@media (prefers-reduced-motion: reduce) { .scan-laser, .pass-preview img { animation: none; } }
