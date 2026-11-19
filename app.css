@@ -5079,3 +5079,26 @@ button, a, .chip, .seg-btn { touch-action: manipulation; }
 .scan-photo-opts { display: flex; flex-direction: column; gap: 10px; }
 .scan-photo-opts .scan-drop { height: min(38vh, 320px); }
 .scan-photo-opts label.btn { cursor: pointer; }
+
+/* ---------- v1.3 live sync ---------- */
+.sync-pill { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; border: 0; background: transparent; color: var(--text-3); font: 600 12px var(--font); cursor: pointer; white-space: nowrap; }
+.sync-pill:hover { background: var(--panel); }
+.sync-pill.tone-green { color: var(--green, #2fd07f); }
+.sync-pill.tone-accent { color: var(--accent-text); }
+.sync-pill.tone-amber { color: var(--amber, #f5a524); }
+.sync-pill.tone-red { color: var(--red, #f25c5c); background: color-mix(in srgb, var(--red, #f25c5c) 12%, transparent); }
+.sync-pill.is-busy .icon { animation: sync-pulse 1.2s ease-in-out infinite; }
+@keyframes sync-pulse { 50% { opacity: .35; } }
+.sync-hero { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: var(--panel); }
+.sync-hero-icon { display: grid; place-items: center; width: 54px; height: 54px; flex: none; border-radius: 16px; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent-text); }
+.sync-hero.tone-green .sync-hero-icon { background: color-mix(in srgb, #2fd07f 16%, transparent); color: #2fd07f; }
+.sync-hero.tone-amber .sync-hero-icon { background: color-mix(in srgb, #f5a524 16%, transparent); color: #f5a524; }
+.sync-hero.tone-red .sync-hero-icon { background: color-mix(in srgb, #f25c5c 16%, transparent); color: #f25c5c; }
+.sync-hero-title { font: 800 18px var(--font); margin-bottom: 3px; }
+.sync-err { color: #f25c5c; margin-top: 4px; }
+.sync-email { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; word-break: break-all; }
+.sync-form { max-width: 520px; }
+.sync-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+@media (max-width: 760px) { .sync-pill span { display: none; } .sync-pill { padding: 0 8px; } }
+.sync-form .seg-btn { height: 38px; white-space: normal; line-height: 1.2; }
+@media (max-width: 760px) { .sync-form .seg { flex-direction: column; } .sync-form .seg .seg-btn { flex: none; width: 100%; height: 40px; } }

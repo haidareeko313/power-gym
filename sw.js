@@ -1,5 +1,5 @@
-// Power Gym offline cache — generated. Version e01f07c8e4e3
-const CACHE = 'power-gym-e01f07c8e4e3';
+// Power Gym offline cache — generated. Version e8b991bc6880
+const CACHE = 'power-gym-e8b991bc6880';
 const FILES = ["./","./app.css","./app.js","./apple-touch-icon.png","./icon-192.png","./icon-512.png","./index.html","./manifest.webmanifest"];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
